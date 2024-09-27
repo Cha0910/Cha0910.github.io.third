@@ -1,43 +1,9 @@
-{{ define "main" }}
 <section id="contact">
-    <link rel="stylesheet" href="{{ 'css/style.css' | relURL }}">
-    <div class="container">
-        <h1>{{ .Title }}</h1> <!-- 제목을 .Title로 사용 -->
-        <p>{{ .Params.sections | first | .content.text | safeHTML }}</p> <!-- 내용 처리 -->
-        
-        <div class="contact-info">
-            <h3>Contact Information</h3>
-            <ul>
-                <li><strong>Email:</strong> 
-                    {{ if .Params.sections | first | .content.autolink }}
-                        <a href="mailto:{{ .Params.sections | first | .content.email }}">{{ .Params.sections | first | .content.email }}</a>
-                    {{ else }}{{ .Params.sections | first | .content.email }}{{ end }}
-                </li>
-                <li><strong>Phone:</strong> 
-                    {{ if .Params.sections | first | .content.autolink }}
-                        <a href="tel:{{ .Params.sections | first | .content.phone }}">{{ .Params.sections | first | .content.phone }}</a>
-                    {{ else }}{{ .Params.sections | first | .content.phone }}{{ end }}
-                </li>
-            </ul>
-        </div>
-
-        <div class="address">
-            <h3>Address</h3>
-            <p>
-                {{ .Params.sections | first | .content.address.street }}<br>
-                {{ .Params.sections | first | .content.address.city }}, {{ .Params.sections | first | .content.address.region }} {{ .Params.sections | first | .content.address.postcode }}<br>
-                {{ .Params.sections | first | .content.address.country }}
-            </p>
-        </div>
-
-        <div class="coordinates">
-            <h3>Coordinates</h3>
-            <p>
-                Latitude: {{ .Params.sections | first | .content.coordinates.latitude }}<br>
-                Longitude: {{ .Params.sections | first | .content.coordinates.longitude }}
-            </p>
-        </div>
+    <h1>{{ .title }}</h1>
+    <p>{{ .content }}</p>
+    <div>
+        <p>Email: {{ .Params.email }}</p>
+        <p>Phone: {{ .Params.phone }}</p>
+        <p>Address: {{ .Params.address.street }}, {{ .Params.address.city }}</p>
     </div>
 </section>
-<p>Sections: {{ .Params.sections | safeHTML }}</p>
-{{ end }}
