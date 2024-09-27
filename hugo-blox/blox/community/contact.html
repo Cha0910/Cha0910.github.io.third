@@ -1,7 +1,6 @@
 {{ define "main" }}
-<link rel="stylesheet" href="{{ 'css/style.css' | relURL }}">
-
 <section id="contact">
+    <link rel="stylesheet" href="{{ 'css/style.css' | relURL }}">
     <div class="container">
         <h1>{{ .Title }}</h1> <!-- 제목을 .Title로 사용 -->
         <p>{{ .Params.sections | first | .content.text | safeHTML }}</p> <!-- 내용 처리 -->
