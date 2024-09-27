@@ -1,8 +1,8 @@
 {{ define "main" }}
-<section id="contact" class="contact-section">
+<section id="contact">
     <div class="container">
-        <h1>{{ .Params.sections | first | .content.title }}</h1>
-        <p>{{ .Params.sections | first | .content.text | safeHTML }}</p>
+        <h1>{{ .Title }}</h1> <!-- 제목을 .Title로 사용 -->
+        <p>{{ .Params.sections | first | .content.text | safeHTML }}</p> <!-- 내용 처리 -->
         
         <div class="contact-info">
             <h3>Contact Information</h3>
@@ -38,4 +38,5 @@
         </div>
     </div>
 </section>
+<p>Sections: {{ .Params.sections | safeHTML }}</p>
 {{ end }}
