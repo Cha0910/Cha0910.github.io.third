@@ -1,0 +1,10 @@
+<section id="contact">
+    <h1>{{ .title }}</h1>
+    <p>{{ .content }}</p>
+    <div>
+      <p>Email: {{ .Params.email }}</p>
+      <p>Phone: {{ .Params.phone }}</p>
+      <p>Address: {{ .Params.address.street }}, {{ .Params.address.city }}</p>
+    </div>
+  </section>
+  
