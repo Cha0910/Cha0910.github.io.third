@@ -1,0 +1,38 @@
+{{ define "main" }}
+  <section id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>{{ .Params.sections | first | .content.title }}</h1>
+          <p>{{ .Params.sections | first | .content.text | safeHTML }}</p>
+
+          <div class="contact-details">
+            <h3>Contact Information</h3>
+            <p><strong>Email:</strong> {{ if .Params.sections | first | .content.autolink }}<a href="mailto:{{ .Params.sections | first | .content.email }}">{{ .Params.sections | first | .content.email }}</a>{{ else }}{{ .Params.sections | first | .content.email }}{{ end }}</p>
+            <p><strong>Phone:</strong> {{ if .Params.sections | first | .content.autolink }}<a href="tel:{{ .Params.sections | first | .content.phone }}">{{ .Params.sections | first | .content.phone }}</a>{{ else }}{{ .Params.sections | first | .content.phone }}{{ end }}</p>
+
+            <h3>Address</h3>
+            <p>
+              {{ .Params.sections | first | .content.address.street }}<br>
+              {{ .Params.sections | first | .content.address.city }}, {{ .Params.sections | first | .content.address.region }} {{ .Params.sections | first | .content.address.postcode }}<br>
+              {{ .Params.sections | first | .content.address.country }}
+            </p>
+
+            <h3>Coordinates</h3>
+            <p>
+              Latitude: {{ .Params.sections | first | .content.coordinates.latitude }}<br>
+              Longitude: {{ .Params.sections | first | .content.coordinates.longitude }}
+            </p>
+          </div>
+
+          {{ if .Params.sections | first | .content.form }}
+          <h3>Contact Form</h3>
+          <form method="POST" action="/contact/">
+            <!-- Contact form fields here -->
+          </form>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}
