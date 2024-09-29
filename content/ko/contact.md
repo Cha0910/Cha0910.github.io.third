@@ -1,7 +1,7 @@
 ---
 title: Contact
 date: 2024-09-29
-type: landing
+
 sections:
     content:
       title: "Contact"
@@ -19,6 +19,4 @@ sections:
         longitude: "127.13444961966684"
       directions: "https://www.google.com/maps"
       autolink: true
-    design:
-      columns: "3"
 ---
