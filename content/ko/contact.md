@@ -1,8 +1,9 @@
 ---
 title: Contact
 date: 2024-09-29
-
-sections:           
+type: landing
+sections:
+  - block: contact
     content:
       title: "Contact"
       text: "Feel free to reach out to me!"
@@ -14,9 +15,11 @@ sections:
         region: "Seoul"
         postcode: "12345"
         country: "South Korea"
-        
       coordinates:
         latitude: "35.84601324617979"
         longitude: "127.13444961966684"
+      directions: "https://www.google.com/maps"
       autolink: true
+    design:
+      columns: "3"
 ---
