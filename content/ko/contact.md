@@ -3,7 +3,6 @@ title: Contact
 date: 2024-09-29
 type: landing
 sections:
-  - block: contact
     content:
       title: "Contact"
       text: "Feel free to reach out to me!"
